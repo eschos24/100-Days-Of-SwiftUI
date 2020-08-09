@@ -41,6 +41,7 @@ struct MissionView: View {
                     
                     Text(self.mission.description)
                         .padding()
+                        .layoutPriority(1)
                     
                     ForEach(self.crew, id: \.role) { member in
                         NavigationLink(destination: AstronautView(astronaut: member.astronaut)) {
@@ -81,6 +82,6 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[6], astronauts: astronauts)
     }
 }
