@@ -43,25 +43,28 @@ struct MissionView: View {
                         .padding()
                     
                     ForEach(self.crew, id: \.role) { member in
-                        HStack {
-                            Image(member.astronaut.id)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 100, height: 100)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.primary, lineWidth: 1))
-                            
-                            VStack(alignment: .leading) {
-                                Text(member.astronaut.name)
-                                    .font(.headline)
-                                Text(member.role)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                        NavigationLink(destination: AstronautView(astronaut: member.astronaut)) {
+                            HStack {
+                                Image(member.astronaut.id)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                                    .overlay(Circle().stroke(Color.primary, lineWidth: 1))
+                                
+                                VStack(alignment: .leading) {
+                                    Text(member.astronaut.name)
+                                        .font(.headline)
+                                    Text(member.role)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                                
+                                Spacer()
                             }
-                            
-                            Spacer()
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        .buttonStyle(PlainButtonStyle())
                     }
                     
                     Spacer(minLength: 25)
