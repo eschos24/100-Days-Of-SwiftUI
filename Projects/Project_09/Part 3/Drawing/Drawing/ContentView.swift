@@ -32,50 +32,50 @@ struct ContentView: View {
     
     var body: some View {
         // Triangle
-        //        Triangle()
-        //            .stroke(Color.red, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-        //            .frame(width: 300, height: 300)
-        
-        
-        //
-        //        Arc(startAngle: .degrees(0), endAngle: .degrees(110), clockwise: true)
-        //            .stroke(Color.blue, lineWidth: 10)
-        //            .frame(width: 300, height: 300)
-        
-        //        Circle()
-        //            .stroke(Color.blue, lineWidth: 40)
-        
-        //        Circle()
-        //            .strokeBorder(Color.blue, lineWidth: 40)
-        
-        //        Arc(startAngle: .degrees(-90), endAngle: .degrees(90), clockwise: true)
-        ////            .stroke(Color.blue, lineWidth: 40)
-        //            .strokeBorder(Color.blue, lineWidth: 40)
+//        Triangle()
+//            .stroke(Color.red, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
+//            .frame(width: 300, height: 300)
+//
+//
+//
+//        Arc(startAngle: .degrees(0), endAngle: .degrees(110), clockwise: true)
+//            .stroke(Color.blue, lineWidth: 10)
+//            .frame(width: 300, height: 300)
+//
+//        Circle()
+//            .stroke(Color.blue, lineWidth: 40)
+//
+//        Circle()
+//            .strokeBorder(Color.blue, lineWidth: 40)
+//
+//        Arc(startAngle: .degrees(-90), endAngle: .degrees(90), clockwise: true)
+////            .stroke(Color.blue, lineWidth: 40)
+//            .strokeBorder(Color.blue, lineWidth: 40)
         
         
         // Flower
-        //        VStack {
-        //            Flower(petalOffset: petalOffset, petalWidth: petalWidth)
-        ////                .stroke(Color.red, lineWidth: 1)
-        //                .fill(Color.red, style: FillStyle(eoFill: true))
-        //
-        //            Text("Offset: \(petalOffset, specifier: "%.1f")")
-        //            Slider(value: $petalOffset, in: -40...40)
-        //                .padding([.horizontal, .bottom])
-        //
-        //            Text("Width: \(petalWidth, specifier: "%.1f")")
-        //            Slider(value: $petalWidth, in: 0...100)
-        //                .padding(.horizontal)
-        //        }
+//        VStack {
+//            Flower(petalOffset: petalOffset, petalWidth: petalWidth)
+//                //                .stroke(Color.red, lineWidth: 1)
+//                .fill(Color.red, style: FillStyle(eoFill: true))
+//
+//            Text("Offset: \(petalOffset, specifier: "%.1f")")
+//            Slider(value: $petalOffset, in: -40...40)
+//                .padding([.horizontal, .bottom])
+//
+//            Text("Width: \(petalWidth, specifier: "%.1f")")
+//            Slider(value: $petalWidth, in: 0...100)
+//                .padding(.horizontal)
+//        }
         
         
         // Color cycling circle
-        //        VStack {
-        //            ColorCyclingCircle(amount: colorCycle)
-        //                .frame(width: 300, height: 300)
-        //
-        //            Slider(value: $colorCycle)
-        //        }
+//        VStack {
+//            ColorCyclingCircle(amount: colorCycle)
+//                .frame(width: 300, height: 300)
+//
+//            Slider(value: $colorCycle)
+//        }
         
         
         // Trapezoid
@@ -101,30 +101,30 @@ struct ContentView: View {
         // Spirograph
         VStack(spacing: 0) {
             Spacer()
-            
+
             Spirograph(innerRadius: Int(innerRadius), outerRadius: Int(outerRadius), distance: Int(distance), amount: amount)
                 .stroke(Color(hue: hue, saturation: 1, brightness: 1), lineWidth: 1)
                 .frame(width: 300, height: 300)
-            
+
             Spacer()
-            
+
             Group {
                 Text("Inner radius: \(Int(innerRadius))")
                 Slider(value: $innerRadius, in: 10...150, step: 1)
                     .padding([.horizontal, .bottom])
-                
+
                 Text("Outer radius: \(Int(outerRadius))")
                 Slider(value: $outerRadius, in: 10...150, step: 1)
                     .padding([.horizontal, .bottom])
-                
+
                 Text("Distance: \(Int(distance))")
                 Slider(value: $distance, in: 1...150, step: 1)
                     .padding([.horizontal, .bottom])
-                
+
                 Text("Amount: \(amount, specifier: "%.2f"))")
                 Slider(value: $amount)
                     .padding([.horizontal, .bottom])
-                
+
                 Text("Color")
                 Slider(value: $hue)
                     .padding(.horizontal)
